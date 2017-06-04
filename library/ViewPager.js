@@ -25,6 +25,7 @@ export default class ViewPager extends Component {
     onPageSelected: PropTypes.func,
     onPageScrollStateChanged: PropTypes.func,
     onPageScroll: PropTypes.func,
+    scrollViewStyle: View.propTypes.style,
   };
 
   static defaultProps = {
@@ -124,7 +125,7 @@ export default class ViewPager extends Component {
         style={[this.props.style, {flex: 1}]}
         {...gestureResponder}>
         <ListView
-          style={{flex: 1}}
+          style={[this.props.scrollViewStyle, {flex: 1}]}
           ref='innerListView'
           scrollEnabled={false}
           horizontal={true}
